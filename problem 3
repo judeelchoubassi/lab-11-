@@ -1,0 +1,23 @@
+class Rectangle:
+    def __init__(sekf, p, q):
+        assert isinstance(p, Point) and isinstance(q, Point) and p.x and p.y, 'Bad input !'
+        self.p = p
+        self.q = q
+        
+        def __str__(self):
+            return'(p=' + str(self.p) + ', q=' + str(self.q) + ')'
+            
+        def get_width(self):
+            return self.q.x - self.p.x
+        
+        def get_heights(self):
+            return self.q.y - self.p.y
+        
+        def perimeter(self):
+            return 2 * (self.get_width() + self.get_height())
+        def area(self):
+            return self.get_width() * self.get_height()
+        def contains(self,pt):
+            assert isinstance(pt, Point), ' Bad input !'
+            return (self.p.x <= pt.x <= self.q.x and self.p.y <= self.q.y)
+    
